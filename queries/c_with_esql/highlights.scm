@@ -149,7 +149,7 @@
 
 ((field_expression
   (field_identifier) @property) @_parent
-  (#not-has-parent? @_parent template_method function_declarator call_expression))
+  (#not-has-parent? @_parent function_declarator call_expression))
 
 (field_designator) @property
 
@@ -339,15 +339,3 @@
   (ms_pointer_modifier)
   (attribute_declaration)
 ] @attribute
-
-; Embedded SQL
-
-(esql_statement (esql_prefix) @type.builtin)
-(esql_keyword) @keyword
-(esql_keyword_execute) @keyword
-(esql_keyword_end_exec) @keyword
-(esql_function_call function: (esql_function) @function.call)
-(esql_operator) @keyword.operator
-(esql_string) @string
-(esql_number) @number
-(esql_variable) @variable.parameter
